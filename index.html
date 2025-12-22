@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta charset = "UTF-8"/>
+    <title>Silas Unger</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+    <style>
+        body {
+            font-family: "Jost";
+            margin: 0;
+            padding: 0;
+        }
+
+        #navbar ul{
+            list-style-type: none;
+
+            margin: 10px;
+            padding: 0;
+
+            overflow: hidden;
+            background-color: #67bed9;
+            border-radius: 10px;
+
+            position: fixed;
+            top: 0;
+            width: 50%;
+        }
+
+        #navbar ul li {
+            float: left;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            margin-right: 0;
+        }
+
+        #navbar ul li a{
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 5px;
+
+            display: block;
+            padding: 15px;
+            transition: color .2s, background-color .2s;
+        }
+
+        #navbar ul li a.active {
+            background-color: #2596be;
+        }
+
+        #navbar ul li a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 200px;
+        }
+        
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <ul>
+            <li><a href="#home" class="active">Silas Unger</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#links">Links</a></li>
+        </ul>
+    </div>
+
+    <h1>Silas Unger</h1>
+    <p >
+        Testing my personal website!
+    </p>
+</body>
+
+</html>
