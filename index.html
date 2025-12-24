@@ -17,50 +17,115 @@
         body {
             text-align: center;
         }
-
-        h1 {
-            margin-top: 150px;
-        }
-
-        ul {
-            text-decoration: none;
-            list-style: none;
-        }
         
-        img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 50%;
+        #main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            height: 900px;
+        }
+
+        #main img {
+            width: 400px;
+            margin: 40px;
+        }
+
+        #headertext {
+            margin: 40px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .container div {
+            overflow: scroll;
+            margin: 10px;
+            padding: 20px;
+
+            width: 26%;
+            height: 400px;
+
+            color: #f0eff4;
+            background-color: #3d2645;
+            border-radius: 5px;
+
+            transition: all .2s;
+        }
+
+        .container div:hover {
+            width: 28%;
+            background-color: #832161;
+        }
+
+        .container img {
+            width: 100%;
         }
     </style>
 </head>
 
 <body>
+    <div id="silas"></div>
     <div id="navbar">
         <ul>
             <li><a href="/index.html#silas" class="active">Silas Unger</a></li>
             <li><a href="/index.html#about">About</a></li>
             <li><a href="/index.html#projects">Projects</a></li>
-            <li><a href="/pages/photos.html">Photography</a></li>
+            <li><a href="/index.html#photos">Photography</a></li>
         </ul>
     </div>
 
-    <h1 id="silas">Silas Unger</h1>
-    <p id="about">
-        Testing my personal website!
-    </p>
-    <img src="photos/shirts.png"/>
+    <div id="main">
+        <img src="photos/personal.jpeg"/>
+
+        <div id="headertext">
+            <h1>Silas Unger</h1>
+            <p id="about">
+                Fascinated by plants, photography, and electronics. Junior @ BHS.
+            </p>
+        </div>
+    </div>
+
     <br>
-    
+
     <h2>
         Projects:
     </h2>
-    <p>Here is where I will put a list of my projects!</p>
-    <ul id="projects">
-        <li>Test</li>
-        <li>Website</li>
-    </ul>
+
+    <div id="projects" class="container">
+        <div>
+            <h2>Custom Macropad</h2>
+            <p>November 2025</p>
+            <img src="/photos/palette.png"/>
+        </div>
+        <div>
+            <h2>Columnist Project</h2>
+            <p>October 2025</p>
+            <img src="/photos/248.jpg"/>
+            <p>
+                Testing testing, this will be a project page in the future. This flexbox item can scroll inside of the box, and should look pretty cool.
+            </p>
+        </div>
+        <div>
+            <h2>Linocut Christmas Cards</h2>
+            <p>November 2025</p>
+            <img src="/photos/palette.png"/>
+        </div>
+        <div>
+            <h2>Fireweed Tea</h2>
+            <p>July 2025</p>
+            <img src="/photos/palette.png"/>
+        </div>
+        <div>
+            <h2>Custom RP2040 Devboard</h2>
+            <p>December 2025</p>
+            <img src="/photos/palette.png"/>
+        </div>
+    </div>
 </body>
 
 </html>
