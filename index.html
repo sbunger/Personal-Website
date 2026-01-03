@@ -13,20 +13,25 @@
 
 
     <style>
-        /* rest of page */
-        body {
-            text-align: center;
+
+        img {
+            border-radius: 3px;
         }
-        
+
         #main {
+            text-align: center;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
+
             height: 900px;
         }
 
-        #main img {
+        h2 {
+            text-align: center;
+        }
+
+        #mainimg {
             width: 400px;
             margin: 40px;
         }
@@ -50,19 +55,69 @@
             width: 26%;
             height: 400px;
 
-            color: #f0eff4;
-            background-color: #3d2645;
+            color: #000000;
+            background-color: #f0eff4;
             border-radius: 5px;
 
             transition: all .2s;
+
+            font-size: 17px;
         }
 
         .container div:hover {
             width: 28%;
-            background-color: #832161;
+            font-size: 18.5px;
         }
 
         .container img {
+            width: 100%;
+        }
+
+        #skillscontainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 600px;
+            margin: 50px;
+        }
+
+        #skillscontainer img {
+            flex: 0 0 38%;  
+            display: flex;
+            width: 100px;
+            margin: 10px;
+        }
+
+        #abouttext {
+            display: flex;
+            width: 30%;
+            margin: 20px;
+            text-align: left;
+        }
+
+        #abouttext h2 {
+            margin: 30px;
+        }
+
+        #links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        #links a {
+            width: 30px;
+            height: 30px;
+            background-color: rgb(39, 39, 39);
+            border-radius: 30px;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        #links img {
             width: 100%;
         }
     </style>
@@ -72,19 +127,19 @@
     <div id="silas"></div>
     <div id="navbar">
         <ul>
-            <li><a href="/index.html#silas" class="active">Silas Unger</a></li>
-            <li><a href="/index.html#about">About</a></li>
-            <li><a href="/index.html#projects">Projects</a></li>
-            <li><a href="/index.html#photos">Photography</a></li>
+            <li><a href="/index.html#silas" class="navb" class="active">Silas Unger</a></li>
+            <li><a href="/index.html#about" class="navb">About</a></li>
+            <li><a href="/index.html#projects" class="navb">Projects</a></li>
+            <li><a href="/index.html#photos" class="navb">Photography</a></li>
         </ul>
     </div>
 
     <div id="main">
-        <img src="photos/personal.jpeg"/>
+        <img id="mainimg" src="photos/personal.jpeg"/>
 
         <div id="headertext">
-            <h1>Silas Unger</h1>
-            <p id="about">
+            <img src="photos/vectors/nametype.svg" width="100px">
+            <p>
                 Fascinated by plants, photography, and electronics. Junior @ BHS.
             </p>
         </div>
@@ -92,16 +147,63 @@
 
     <br>
 
-    <h2>
-        Projects:
+    <div id="about"></div>
+ 
+    <div id="main">
+        <div id="abouttext">
+            <h2>
+                About Me!
+            </h2>
+            <p>
+                I am a 17 year old Junior living in Seattle, Washington, who loves the outdoors, coding, and learning new things. In the digital world, I have experience in web development, CAD, and vector design. I am familiar with Blender, Fusion 360, and VSCode, and am in the process of learning KICAD. Outside of this, I enjoy photograpy, hiking, and music. I have been learning violin and guitar for over five years now, and am in AP Music Theory class.
+            </p>
+        </div>
+        <div id="skillscontainer">
+            <img src="photos/about/IMG_8373.JPG">
+            <img src="photos/about/IMG_8519.JPG">
+            <img src="photos/about/IMG_8533.JPG">
+            <img src="photos/about/IMG_8706.JPG">
+        </div>
+    </div>
+
+    <br>
+
+    <h2 id="projects">
+        Projects
     </h2>
 
-    <div id="projects" class="container">
+    <div class="container">
+
         <div>
             <h2>Custom Macropad</h2>
             <p>November 2025</p>
-            <img src="/photos/palette.png"/>
+            <p>
+                <img src="/photos/macro1.png"/><br><br>
+                This is a custom macropad featuring eight keys and two (sadly nonfunctional) LEDs. It runs off of a XIAO RP2040 devboard, and I created a custom PCB, CAD 3D printed enclosure, and KMK firmware. Currently, the keys are mapped to browser functions and copy / paste keys, but can be reprogrammed easily.<br>
+                <h3>
+                    PCB Creation
+                </h3>
+                The PCB was created in KICAD using a <a href="https://blueprint.hackclub.com/hackpad/index.md">hackclub tutorial</a>. I used the incorrect footprints for the LEDs, so they do not work. The switches were wired in a 2x8 matrix to save on GPIO pins. I used Affinity Designer to create the custom silkscreen design.<br><br>
+                <img src="/photos/macro2.png"/><br>
+                <h3>
+                    CAD
+                </h3>
+                I created the case model in Fusion 360, and went through two iterations. At first, I printed the body too short, so I increased the lid height and was able to fit it all together with the M3 screws and heat-set inserts provided.<br>
+                <h3>
+                    Putting it All Together
+                </h3>
+                Soldering all of the switches, diodes, and the devboard was a process. This was my first time soldering, so I had some trouble, but I learned quickly. I created a quick script using CircuitPython and the KMK library, and my keyboard was functional!<br><br>
+                <iframe width="100%" height="250px"
+                    src="https://www.youtube.com/embed/ceA7_74sZ10?enablejsapi=1&controls=0&autoplay=1&mute=1&modestbranding=1"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </p>
         </div>
+
         <div>
             <h2>Columnist Project</h2>
             <p>October 2025</p>
@@ -110,22 +212,44 @@
                 Testing testing, this will be a project page in the future. This flexbox item can scroll inside of the box, and should look pretty cool.
             </p>
         </div>
+
         <div>
             <h2>Linocut Christmas Cards</h2>
             <p>November 2025</p>
             <img src="/photos/palette.png"/>
         </div>
-        <div>
-            <h2>Fireweed Tea</h2>
-            <p>July 2025</p>
-            <img src="/photos/palette.png"/>
-        </div>
-        <div>
-            <h2>Custom RP2040 Devboard</h2>
-            <p>December 2025</p>
-            <img src="/photos/palette.png"/>
-        </div>
     </div>
+    
+    <br><br><br><br><br>
+
+    <div id="links">
+        <a href="https://www.instagram.com/unger.silas/"><img src="photos/icons/insta.png"></a>
+        <a href="https://github.com/sbunger"><img src="photos/icons/github.png"></a>
+        <a href="mailto:silasburtonunger@gmail.com"><img src="photos/icons/email.png"></a>
+    </div>
+
+    <br>
+
+    <script>
+        const buttons = Array.from(document.getElementsByClassName("navb"));
+
+        window.addEventListener("scroll", () => {
+            const scrollY = window.scrollY;
+
+            // remove active class from all buttons
+            buttons.forEach(btn => btn.classList.remove("active"));
+
+            if (scrollY < 500) {
+                buttons[0].classList.add("active");
+            } else if (scrollY < 1200) {
+                buttons[1].classList.add("active");
+            } else if (scrollY < 2400) {
+                buttons[2].classList.add("active");
+            } else {
+            buttons[3].classList.add("active");
+            }
+        });
+    </script>
 </body>
 
 </html>
