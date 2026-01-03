@@ -13,11 +13,6 @@
 
 
     <style>
-
-        img {
-            border-radius: 3px;
-        }
-
         #main {
             text-align: center;
             display: flex;
@@ -26,7 +21,7 @@
 
             height: 900px;
         }
-
+        
         h2 {
             text-align: center;
         }
@@ -64,6 +59,18 @@
             font-size: 17px;
         }
 
+        .container h2 {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 0px;
+        }
+
+        .container h4 {
+            text-align: center;
+            font-weight: 500;
+            color: #832161;
+        }
+
         .container div:hover {
             width: 28%;
             font-size: 18.5px;
@@ -71,6 +78,13 @@
 
         .container img {
             width: 100%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .container iframe {
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
 
         #skillscontainer {
@@ -105,16 +119,30 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
+
             width: 100%;
+            height: 100px;
+            margin-top: 60px;
         }
 
         #links a {
-            width: 30px;
-            height: 30px;
-            background-color: rgb(39, 39, 39);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 25px;
+            height: 25px;
+            background-color: #832161;
             border-radius: 30px;
-            margin: 10px;
+            margin: 20px;
             padding: 10px;
+            transition: all .2s;
+        }
+
+        #links a:hover {
+            width: 35px;
+            height: 35px;
+            background-color: #da4167;
         }
 
         #links img {
@@ -124,13 +152,15 @@
 </head>
 
 <body>
+    <div id="cursor"></div>
+
+    <br>
     <div id="silas"></div>
     <div id="navbar">
         <ul>
-            <li><a href="/index.html#silas" class="navb" class="active">Silas Unger</a></li>
-            <li><a href="/index.html#about" class="navb">About</a></li>
-            <li><a href="/index.html#projects" class="navb">Projects</a></li>
-            <li><a href="/index.html#photos" class="navb">Photography</a></li>
+            <li class="button"><a href="/index.html#silas" class="navb" class="active">Silas Unger</a></li>
+            <li class="button"><a href="/index.html#about" class="navb">About</a></li>
+            <li class="button"><a href="/index.html#projects" class="navb">Projects</a></li>
         </ul>
     </div>
 
@@ -174,25 +204,25 @@
 
     <div class="container">
 
-        <div>
-            <h2>Custom Macropad</h2>
-            <p>November 2025</p>
+        <div class="button">
             <p>
-                <img src="/photos/macro1.png"/><br><br>
-                This is a custom macropad featuring eight keys and two (sadly nonfunctional) LEDs. It runs off of a XIAO RP2040 devboard, and I created a custom PCB, CAD 3D printed enclosure, and KMK firmware. Currently, the keys are mapped to browser functions and copy / paste keys, but can be reprogrammed easily.<br>
+                <h2>Custom Macropad</h2>
+                <h4>October 2025</h4>
+                <img src="/photos/macro1.png"/>
+                This is a custom macropad featuring eight keys and two (sadly nonfunctional) LEDs. It runs off of a XIAO RP2040 devboard, and I created a custom PCB, CAD 3D printed enclosure, and KMK firmware. Currently, the keys are mapped to browser functions and copy / paste keys, but can be reprogrammed easily.
                 <h3>
                     PCB Creation
                 </h3>
-                The PCB was created in KICAD using a <a href="https://blueprint.hackclub.com/hackpad/index.md">hackclub tutorial</a>. I used the incorrect footprints for the LEDs, so they do not work. The switches were wired in a 2x8 matrix to save on GPIO pins. I used Affinity Designer to create the custom silkscreen design.<br><br>
-                <img src="/photos/macro2.png"/><br>
+                The PCB was created in KICAD using a <a href="https://blueprint.hackclub.com/hackpad/index.md">hackclub tutorial</a>. I used the incorrect footprints for the LEDs, so they do not work. The switches were wired in a 2x8 matrix to save on GPIO pins. I used Affinity Designer to create the custom silkscreen design.
+                <img src="/photos/macro2.png"/>
                 <h3>
                     CAD
                 </h3>
-                I created the case model in Fusion 360, and went through two iterations. At first, I printed the body too short, so I increased the lid height and was able to fit it all together with the M3 screws and heat-set inserts provided.<br>
-                <h3>
-                    Putting it All Together
-                </h3>
-                Soldering all of the switches, diodes, and the devboard was a process. This was my first time soldering, so I had some trouble, but I learned quickly. I created a quick script using CircuitPython and the KMK library, and my keyboard was functional!<br><br>
+                I created the case model in Fusion 360, and went through two iterations. At first, I printed the body too short, so I increased the lid height and was able to fit it all together with the M3 screws and heat-set inserts provided.
+
+                <h3>Putting it All Together</h3>
+
+                Soldering all of the switches, diodes, and the devboard was a process. This was my first time soldering, so I had some trouble, but I learned quickly. I created a quick script using CircuitPython and the KMK library, and my keyboard was functional!
                 <iframe width="100%" height="250px"
                     src="https://www.youtube.com/embed/ceA7_74sZ10?enablejsapi=1&controls=0&autoplay=1&mute=1&modestbranding=1"
                     title="YouTube video player"
@@ -204,52 +234,91 @@
             </p>
         </div>
 
-        <div>
-            <h2>Columnist Project</h2>
-            <p>October 2025</p>
-            <img src="/photos/248.jpg"/>
+        <div class="button">
             <p>
-                Testing testing, this will be a project page in the future. This flexbox item can scroll inside of the box, and should look pretty cool.
+                <h2>Linocut Christmas Cards</h2>
+                <h4>December 2025</h4>
+                This year, I decided to make linocut Christmas cards for my family. I spent hours carving away at the pink blocks found in the Speedball starter kit, and created a result that I really liked!
+                <img src="/photos/lino1.jpeg"/>
+                The designs are modeled after PNW symbols: Mount Rainier and the salmon. Both were printed on regular cardstock with speedball black ink. The printing process requires way more force than you might expect, and my first few prints were not dark enough. This was easy to fix by using a panini press to push the ink down harder.
             </p>
         </div>
 
-        <div>
-            <h2>Linocut Christmas Cards</h2>
-            <p>November 2025</p>
-            <img src="/photos/palette.png"/>
+        <div class="button">
+            <p>
+                <h2>PiCat Devboard</h2>
+                <h4>November 2025</h4>
+                <img src="/photos/board1.jpeg"/>
+                PiCat is a custom RP2040-based devboard, created completely by me. It features 16mb of memory, two LEDs, and 29 GPIO pins. The layout is based on the pico board, but with more GPIO access available. I manufactured it through JLCPCB's PCBA service, funded from a hackclub grant. All pcb design was done in KICAD, and took me a lot of time. I learned most of my KICAD skills from this project, as there were many components I had to route in a very small space with only two PCB layers. 
+                <img src="/photos/board2.png">
+                <h3>
+                    PCB Design
+                </h3>
+                Again, I created a custom silkscreen in Affinity for the front and back of the PCB. I had to route the USB data lines as a differential pair to help the chip read inputs correctly. 
+                <h3>
+                    Assembly & Testing
+                </h3>
+                I soldered the pin headers on by hand after recieving the PCBs, and quickly wrote some test code using CircuitPython to make two LEDs blink at opposite times. It worked, and I hope to use these boards in future projects!
+            </p>
         </div>
     </div>
-    
-    <br><br><br><br><br>
 
     <div id="links">
-        <a href="https://www.instagram.com/unger.silas/"><img src="photos/icons/insta.png"></a>
-        <a href="https://github.com/sbunger"><img src="photos/icons/github.png"></a>
-        <a href="mailto:silasburtonunger@gmail.com"><img src="photos/icons/email.png"></a>
+        <a href="https://www.instagram.com/unger.silas/" class="button"><img src="photos/icons/insta.png"></a>
+        <a href="https://github.com/sbunger" class="button"><img src="photos/icons/github.png"></a>
+        <a href="mailto:silasburtonunger@gmail.com" class="button"><img src="photos/icons/email.png"></a>
     </div>
 
-    <br>
+    <p style="text-align: center;">
+        © Silas Unger 2026 :)
+    </p>
+
 
     <script>
-        const buttons = Array.from(document.getElementsByClassName("navb"));
+        const navb = Array.from(document.getElementsByClassName("navb"));
 
         window.addEventListener("scroll", () => {
             const scrollY = window.scrollY;
 
             // remove active class from all buttons
-            buttons.forEach(btn => btn.classList.remove("active"));
+            navb.forEach(btn => btn.classList.remove("active"));
 
             if (scrollY < 500) {
-                buttons[0].classList.add("active");
+                navb[0].classList.add("active");
             } else if (scrollY < 1200) {
-                buttons[1].classList.add("active");
+                navb[1].classList.add("active");
             } else if (scrollY < 2400) {
-                buttons[2].classList.add("active");
+                navb[2].classList.add("active");
             } else {
-            buttons[3].classList.add("active");
+                navb[3].classList.add("active");
             }
         });
     </script>
+
+    <script>
+        const cursorObject = document.getElementById("cursor");
+        const buttons = Array.from(document.getElementsByClassName("button"));
+        console.log(buttons);
+
+
+        document.addEventListener("mousemove", (e) => {
+            cursorObject.style.left = e.clientX + "px";
+            cursorObject.style.top = e.clientY + "px";
+        });
+
+        buttons.forEach(el => {
+            el.addEventListener("mouseenter", () => {
+                cursorObject.className = "selected";
+                console.log(cursorObject.className);
+            });
+
+            el.addEventListener("mouseleave", () => {
+                cursorObject.className = "";
+                console.log("off");
+            });
+        });
+    </script>
+
 </body>
 
 </html>

@@ -7,6 +7,35 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: none;
+}
+
+a {
+    cursor: none;
+}
+
+#cursor {
+    width: 17px;
+    height: 17px;
+
+    background: #da4167;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+
+    z-index: 999999;
+    transition: width .4s, height .4s, background .4s;
+}
+
+#cursor.selected {
+    background: black;
+    width: 26px;
+    height: 26px;
+}
+
+img {
+    border-radius: 5px;
 }
 
 /* navbar */
@@ -27,7 +56,7 @@ body {
     list-style: none;
     
     display: flex;
-    gap: 100px;
+    gap: 70px;
 }
 
 #navbar ul li a{
